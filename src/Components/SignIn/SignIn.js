@@ -1,23 +1,39 @@
 import { CircularProgress } from "@mui/material";
-import { Redirect } from "react-router-dom";
+import { app, auth, signInWithEmailAndPassword } from "../../FireBase/FireBase";
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 
 const SignIn = () => {
 	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate();
 	const formik = useFormik({
 		initialValues: { email: "", password: "" },
 		validationSchema: Yup.object({
-			email: Yup.string().email("Invalid email adress").required("Emial required"),
+			email: Yup.string()
+				.email("Invalid email adress")
+				.required("Emial required"),
 			password: Yup.string()
 				.required("Password required")
 				.min(6, "Min 6 sings"),
 		}),
 		onSubmit: (values) => {
-			//send
+			setLoading(true);
+			submitValues(values);
 		},
 	});
+
+	const submitValues = (values) => {
+		signInWithEmailAndPassword(auth, values.email, values.password)
+			.then(() => {
+				navigate('/home')
+			})
+			.catch((errors) => {
+				setLoading(false);
+				alert(errors);
+			});
+	};
 	return (
 		<>
 			<div className="container" style={{ margin: "100px" }}>
@@ -47,7 +63,7 @@ const SignIn = () => {
 						) : null}
 
 						{loading ? (
-							<CircularProgress color="secondary" className="progress" />
+							<CircularProgress color="primary" className="progress" />
 						) : (
 							<button type="submit">Log in</button>
 						)}

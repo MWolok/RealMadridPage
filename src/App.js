@@ -1,8 +1,9 @@
 import "./App.css";
+
 import RouterComp from "./RouterComp";
 
-function App() {
-	return <RouterComp></RouterComp>;
-}
+const App = (props) => {
+	return <RouterComp {...props}></RouterComp>;
+};
 
 export default App;

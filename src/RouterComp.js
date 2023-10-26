@@ -3,10 +3,10 @@ import Home from "./Pages/Home/Home";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import SignIn from "./Components/SignIn/SignIn";
-const RouterComp = () => {
+const RouterComp = ({ user }) => {
 	return (
 		<Router>
-			<Header></Header>
+			<Header user={user}></Header>
 			<Routes>
 				<Route path="/home" element={<Home />} />
 				<Route path="/LogIn" element={<SignIn />} />
