@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+import {  showErrorToast,showSuccessToast } from '../Toast'
+
 
 const SignIn = () => {
 	const [loading, setLoading] = useState(false);
@@ -28,8 +30,10 @@ const SignIn = () => {
 		signInWithEmailAndPassword(auth, values.email, values.password)
 			.then(() => {
 				navigate('/home')
+				showSuccessToast("Welcom")
 			})
 			.catch((errors) => {
+				showErrorToast(errors)
 				setLoading(false);
 				alert(errors);
 			});

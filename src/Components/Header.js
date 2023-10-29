@@ -5,27 +5,28 @@ import RmaLogo from "./RmaLogo";
 import { signOut } from "firebase/auth";
 import { auth } from "../FireBase/FireBase";
 import { useEffect, useState } from "react";
+import { showErrorToast, showSuccessToast } from '../Components/Toast'
 
 const Header = (user) => {
-	const [userLog, setUserLog] = useState();
+	const [userLog, setUserLog] = useState(false);
+
 	const color = indigo[500];
-	console.log(user);
 
 	useEffect(() => {
-		if (!user) {
+		if (user.user == null) {
 			setUserLog(false);
 		} else setUserLog(true);
-		console.log(userLog);
-	}, [userLog,user]);
+	}, [userLog, user]);
 
 	const logOutHandler = () => {
 		signOut(auth)
 			.then(() => {
-				alert("LOGOUT");
-				setUserLog(false)
+				showSuccessToast("See you soon!")
+				setUserLog(false);
 			})
 			.catch((error) => {
 				alert("alert");
+				showErrorToast(error)
 			});
 	};
 

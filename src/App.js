@@ -1,6 +1,6 @@
 import "./App.css";
 
-import RouterComp from "./RouterComp";
+import RouterComp from "./Routers/RouterComp";
 
 const App = (props) => {
 	return <RouterComp {...props}></RouterComp>;
