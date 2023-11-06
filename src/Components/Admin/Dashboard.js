@@ -1,11 +1,15 @@
-const Dashboard = () => {
+import AdminLayout from "./AdminLayout";
+
+
+const Dashboard = (props) => {
 	return (
-		<>
-			<br></br>
-			<br></br>
-			<br></br>
-			<h1>Dashboard</h1>
-		</>
+		<AdminLayout >
+		<div className="user_dashboard">
+			 <div>
+				 This is your dashboard
+			 </div>
+		</div>
+	 </AdminLayout> 
 	);
 };
 export default Dashboard;

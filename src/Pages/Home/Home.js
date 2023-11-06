@@ -1,10 +1,11 @@
 import Header from "../../Components/Header";
+import Featured from "./Featured";
 
 const Home = () => {
 	return (
-		<>
-			<h1>HOME PAGE</h1>
-		</>
+		<div className="bck_blue">
+			<Featured></Featured>
+		</div>
 	);
 };
 export default Home;

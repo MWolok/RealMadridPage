@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+	Navigate,
+} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
@@ -10,19 +16,19 @@ import Dashboard from "../Components/Admin/Dashboard";
 
 const RouterComp = ({ user }) => {
 	return (
-		<Router>
-			<Header user={user}></Header>
-			<Routes>
-				<Route path="/home" element={<Home />} />
-			
-				<Route path="/dashboard" element={AuthGuard(<Dashboard></Dashboard>)} />
-
-				<Route path="/LogIn" element={<SignIn />} />
-			</Routes>
-			<ToastContainer></ToastContainer>
-
-			<Footer></Footer>
-		</Router>
+	  <Router>
+		<Header user={user} />
+		<Routes>
+		  <Route path="/home" element={<Home />} />
+		  
+		  <Route path="/dashboard" element={<AuthGuard><Dashboard /></AuthGuard>} />
+		  
+		  <Route path="/LogIn" element={<SignIn user={user} />} />
+		</Routes>
+		<ToastContainer />
+		<Footer />
+	  </Router>
 	);
-};
-export default RouterComp;
+  };
+  
+  export default RouterComp;

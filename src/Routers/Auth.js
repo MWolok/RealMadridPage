@@ -1,17 +1,19 @@
-import { Navigate } from "react-router-dom";
-import { auth } from "../FireBase/FireBase";
 
-const AuthGuard = (Component) => {
-	const authCheck = () => {
-		const user = auth.currentUser;
-		if (user) {
-			return <Component {...this.props} />;
-		} else {
-			return <Navigate to="/login" replace />;
-		}
-	};
 
-	return authCheck();
-};
-
-export default AuthGuard;
+import { useNavigate } from "react-router-dom";
+import {auth } from "../FireBase/FireBase";
+import { useEffect } from "react";
+const AuthGuard = ({ children }) => {
+	const navigate = useNavigate();
+	const  currentUser  = auth.currentUser;
+  
+	useEffect(() => {
+	  if (!currentUser) {
+		navigate("/LogIn", { replace: true });
+	  }
+	}, [currentUser, navigate]);
+  
+	return currentUser ? children : null;
+  };
+  
+  export default AuthGuard;

@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {
+
 	getAuth,
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
@@ -28,4 +29,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const analytics = getAnalytics(app);
 
-export { app, auth, signInWithEmailAndPassword,onAuthStateChanged,signOut };
+const logOutHandler = () => {
+	signOut(auth)
+		.then(() => {
+			
+		})
+		.catch((error) => {
+	
+		
+		});
+};
+
+export { app, auth, signInWithEmailAndPassword,onAuthStateChanged,signOut,logOutHandler };

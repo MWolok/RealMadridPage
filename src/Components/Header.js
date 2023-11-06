@@ -5,7 +5,7 @@ import RmaLogo from "./RmaLogo";
 import { signOut } from "firebase/auth";
 import { auth } from "../FireBase/FireBase";
 import { useEffect, useState } from "react";
-import { showErrorToast, showSuccessToast } from '../Components/Toast'
+import { showErrorToast, showSuccessToast } from "../Components/Toast";
 
 const Header = (user) => {
 	const [userLog, setUserLog] = useState(false);
@@ -21,12 +21,12 @@ const Header = (user) => {
 	const logOutHandler = () => {
 		signOut(auth)
 			.then(() => {
-				showSuccessToast("See you soon!")
+				showSuccessToast("See you soon!");
 				setUserLog(false);
 			})
 			.catch((error) => {
 				alert("alert");
-				showErrorToast(error)
+				showErrorToast(error);
 			});
 	};
 
@@ -36,7 +36,7 @@ const Header = (user) => {
 			style={{
 				backgroundColor: "#FFFFCC",
 				boxShadow: "none",
-				paddin: "10px 0",
+				padding: "10px 0",
 				borderBottom: "2px solid #3E7FD4",
 			}}>
 			<Toolbar style={{ display: "flex" }}>
@@ -70,4 +70,5 @@ const Header = (user) => {
 		</AppBar>
 	);
 };
+
 export default Header;
