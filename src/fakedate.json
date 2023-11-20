@@ -1,0 +1,75 @@
+{
+    "matches": [
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "FC Barcelona",
+        "date": "2020-02-29",
+        "homeTeamGoals": 2,
+        "awayTeamGoals": 0
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Atletico Madrid",
+        "date": "2020-03-07",
+        "homeTeamGoals": 1,
+        "awayTeamGoals": 1
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Sevilla FC",
+        "date": "2020-06-14",
+        "homeTeamGoals": 2,
+        "awayTeamGoals": 0
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Valencia CF",
+        "date": "2020-06-21",
+        "homeTeamGoals": 3,
+        "awayTeamGoals": 0
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Getafe CF",
+        "date": "2020-06-25",
+        "homeTeamGoals": 1,
+        "awayTeamGoals": 0
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Athletic Bilbao",
+        "date": "2020-07-05",
+        "homeTeamGoals": 2,
+        "awayTeamGoals": 1
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Villarreal CF",
+        "date": "2020-07-16",
+        "homeTeamGoals": 3,
+        "awayTeamGoals": 2
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Granada CF",
+        "date": "2020-07-20",
+        "homeTeamGoals": 4,
+        "awayTeamGoals": 1
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Deportivo Alaves",
+        "date": "2020-07-24",
+        "homeTeamGoals": 2,
+        "awayTeamGoals": 0
+      },
+      {
+        "homeTeam": "Real Madrid",
+        "awayTeam": "Leganes",
+        "date": "2020-07-19",
+        "homeTeamGoals": 2,
+        "awayTeamGoals": 2
+      }
+    ]
+  }
+  
