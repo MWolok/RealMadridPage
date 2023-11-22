@@ -9,6 +9,7 @@ export const Tag = (props) => {
 				padding: "5px 10px",
 				display: "inline-block",
 				fontFamily: "Righteous",
+                marginLeft:"15px",
 				...props.add,
 			}}>
 			{props.children}
