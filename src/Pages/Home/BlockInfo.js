@@ -11,6 +11,7 @@ const MatchesBlock = ({ match }) => {
 						<div
 							className="icon"
 							style={{
+								width:"35px",
 								background: `url(${Rma}) no-repeat`,
 							}}></div>
 						<div className="team_name">{match.homeTeam}</div>
@@ -19,7 +20,7 @@ const MatchesBlock = ({ match }) => {
 				</div>
 				<div className="match_bottom">
 					<div className="left">
-						<div className="icon" style={{}}></div>
+						<div className="icon" style={{width:'35px1'}}></div>
 						<div className="team_name">{match.awayTeam}</div>
 					</div>
 					<div className="right">{match.awayTeamGoals}</div>

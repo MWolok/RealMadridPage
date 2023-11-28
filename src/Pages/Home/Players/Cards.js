@@ -1,6 +1,5 @@
 import React from "react";
-import { easePolyOut } from "d3-ease";
-import Animate from "react-move/Animate";
+import {motion} from'framer-motion'
 import cr7 from "../../../Img/cr7.png";
 import Card from "./Card";
 
@@ -28,37 +27,29 @@ let cards = [
 ];
 const Cards = (props) => {
 	const showAnimateCards = () =>
-		cards.map((card, i) => (
-			<Animate
-				key={i}
-				show={props.show}
-				start={{
-					left: 0,
-					bottom: 0,
-				}}
-				enter={{
-					left: [card.left],
-					bottom: [card.bottom],
-					timing: { delay: 500, duration: 500, ease: easePolyOut },
-				}}>
-				{({ left, bottom }) => (
-					<div
-						style={{
-							position: "absolute",
-							left,
-							bottom,
-						}}>
-						<Card
-							number="7"
-							name="Cristiano"
-							lastname="Ronaldo"
-							bck={card.player}
-						/>
-					</div>
-				)}
-			</Animate>
-		));
-
+	  cards.map((card, i) => (
+		<motion.div
+		  key={i}
+		  initial={{ left: 0, bottom: 0 }}
+		  animate={{
+			left: [card.left],
+			bottom: [card.bottom],
+		  }}
+		  transition={{ delay: 0.5, duration: 1.5, ease: "easeInOut" }}
+		>
+		  <div
+			style={{
+			  position: "absolute",
+			  left: card.left,
+			  bottom: card.bottom,
+			}}
+		  >
+			<Card number="7" name="Cristiano" lastname="Ronaldo" bck={card.player} />
+		  </div>
+		</motion.div>
+	  ));
+  
 	return <div>{showAnimateCards()}</div>;
-};
-export default Cards;
+  };
+  
+  export default Cards;

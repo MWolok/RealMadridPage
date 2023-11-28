@@ -4,6 +4,7 @@ import { easeLinear } from "d3-ease";
 import { Animate } from "react-move";
 import Matches from "./Matches";
 import Players from "./Players/Players";
+import Promotion from "./Promotion/Promotion";
 
 const Home = () => {
 	return (
@@ -12,6 +13,7 @@ const Home = () => {
 				<Featured></Featured>
 				<Matches></Matches>
 				<Players></Players>
+				<Promotion></Promotion>
 			</div>
 			
 		</>
